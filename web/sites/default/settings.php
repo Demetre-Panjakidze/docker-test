@@ -881,15 +881,11 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 if (file_exists($app_root . '/' . $site_path . '/settings.prod.php')) {
   include $app_root . '/' . $site_path . '/settings.prod.php';
 }
-// $databases['default']['default'] = array (
-//     'database' => 'drupal',
-//     'username' => 'postgres',
-//     'password' => '',
-//     'prefix' => '',
-//     'host' => 'host.docker.internal',
-//     'port' => '5432',
-//     'driver' => 'pgsql',
-//     'namespace' => 'Drupal\\pgsql\\Driver\\Database\\pgsql',
-//     'autoload' => 'core/modules/pgsql/src/Driver/Database/pgsql/',
-//   );
+
 $settings['config_sync_directory'] = '../config/sync';
+
+// Automatically generated include for settings managed by ddev.
+$ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
+if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
+  require $ddev_settings;
+}
